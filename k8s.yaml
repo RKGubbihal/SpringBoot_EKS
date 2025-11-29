@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: <DOCKER_IMAGE_URI>
+#          image: <DOCKER_IMAGE_URI>
+          image: 400338099943.dkr.ecr.us-west-2.amazonaws.com/springboot-eks:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 9091
 
 ---
 apiVersion: v1
@@ -29,5 +30,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 9091
   type: LoadBalancer
